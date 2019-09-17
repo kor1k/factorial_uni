@@ -1,1 +1,18 @@
-function f(){let e=document.getElementById("incoming_data").value;if("1"===e&&(document.getElementById("result").innerHTML="Факториал 1 = 1 😀"),""===e&&(document.getElementById("result").innerHTML="Поле не может быть пустым."),e>=100)document.getElementById("result").innerHTML="Слишком большое значение.";else{document.getElementById("result").innerHTML="Факториал числа: "+e+" = "+function e(n){return 1!==n?n*e(n-1):1}(e)}}
+function f() {
+    let inputValue = document.getElementById('incoming_data').value;
+    if (inputValue === '1') {
+        document.getElementById('result').innerHTML = 'Факториал 1 = 1 😀';
+    }
+    if (inputValue === '') {
+        document.getElementById('result').innerHTML = 'Поле не может быть пустым.';
+    }
+    if (inputValue >= 100) {
+        document.getElementById('result').innerHTML = 'Слишком большое значение.';
+    } else {
+        function factorial(n) {
+            return (n !== 1) ? n * factorial(n - 1) : 1;
+        }
+
+        document.getElementById('result').innerHTML = "Факториал числа: " + inputValue + " = " + factorial(inputValue);
+    }
+}
